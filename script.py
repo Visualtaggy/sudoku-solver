@@ -10,6 +10,8 @@ board = [
     [0,4,9,2,0,6,0,0,7]
 ]
 
+#Function to print the board
+
 def print_board(bo):
     for i in range(len(bo)):
         if i % 3 == 0 and i != 0:
@@ -26,4 +28,13 @@ def print_board(bo):
 
 
 
-print_board(board)
+# function to find an unsolved space in the board representing by (0)
+def find_unsolved(bo): 
+    
+    for i in range (len(bo)):
+        for j in range (len(bo[0])):
+            if bo[i][j]==0:
+                return (i,j) # returning array number with unsolved piece
+
+
+print(find_unsolved(board))
