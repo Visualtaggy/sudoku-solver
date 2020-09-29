@@ -10,6 +10,16 @@ board = [
     [0,4,9,2,0,6,0,0,7]
 ]
 
+def check_validity(bo,number,position):
+    #Checking the row
+    for i in range (len(bo[0])):
+        if bo[position[0]][i] == number and  position[1] != i:
+            return False
+    #Checking the column
+    for i in range (len(bo)):
+        if bo[i] [position[1]] == number and position [0] != i:
+            return False
+
 #Function to print the board
 
 def print_board(bo):
@@ -36,5 +46,3 @@ def find_unsolved(bo):
             if bo[i][j]==0:
                 return (i,j) # returning array number with unsolved piece
 
-
-print(find_unsolved(board))
